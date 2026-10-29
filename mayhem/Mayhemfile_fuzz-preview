@@ -1,0 +1,10 @@
+project: savantenvs/exiv2
+target: fuzz-preview
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz-preview/testsuite
+cmds:
+  - cmd: /mayhem/fuzz-preview
+    libfuzzer: true
+    dictionary: /mayhem/fuzz/exiv2.dict
+    timeout: 5
